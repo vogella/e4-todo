@@ -1,0 +1,8 @@
+INDEX VERSION 1.126+C:\Users\D034797\workspace\trash4\.metadata\.plugins\org.eclipse.jdt.core
+3931251709.index
+1890520597.index
+594745518.index
+3755623340.index
+1484591390.index
+611326809.index
+805375083.index

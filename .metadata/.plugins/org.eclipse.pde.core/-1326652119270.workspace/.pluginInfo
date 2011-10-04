@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map>
+	<bundle bundleID="409" localization="OSGI-INF/l10n/bundle" name="Servicemock" project="de.vogella.e4.todo.model.servicemock"/>
+	<bundle bundleID="408" localization="OSGI-INF/l10n/bundle" name="Model" project="de.vogella.e4.todo.model"/>
+	<bundle bundleID="407" class="de.vogella.e4.todo.contribute.Activator" localization="OSGI-INF/l10n/bundle" name="Contribute" project="de.vogella.e4.todo.contribute"/>
+	<bundle bundleID="403" class="de.vogella.e4.todo.Activator" localization="OSGI-INF/l10n/bundle" name="Todo" project="de.vogella.e4.todo"/>
+	<bundle bundleID="406" class="de.vogella.e4.bundletracker.Activator" localization="OSGI-INF/l10n/bundle" name="Bundletracker" project="de.vogella.e4.bundletracker"/>
+</map>

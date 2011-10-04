@@ -1,0 +1,90 @@
+package de.vogella.e4.todo.parts;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.annotation.PostConstruct;
+import javax.inject.Inject;
+import javax.inject.Named;
+
+import org.eclipse.e4.core.di.annotations.Optional;
+import org.eclipse.e4.core.services.events.IEventBroker;
+import org.eclipse.e4.ui.services.IServiceConstants;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.Text;
+import org.osgi.service.event.EventHandler;
+
+import de.vogella.e4.todo.model.Todo;
+
+public class TodoDetails {
+	@Inject
+	private IEventBroker eventBroker;
+	@Inject
+	private final Composite parent;
+	private Todo todo;
+	private Text summary;
+	private Text description;
+
+	// e4 will inject the composite "parent" into the view
+	@Inject
+	public TodoDetails(Composite parent) {
+		this.parent = parent;
+	}
+	
+	@PostConstruct 
+	public void buildUi(){
+		System.out.println("PostContruct called");
+		final GridLayout layout = new GridLayout(2, false);
+		parent.setLayout(layout);
+
+		createLable("Summary:");
+		GridData gridData = new GridData(GridData.FILL_HORIZONTAL);
+		summary = new Text(parent, SWT.NONE);
+		summary.setTextLimit(100);
+		summary.setLayoutData(gridData);
+
+		createLable("Description:");
+		gridData = new GridData(GridData.FILL_HORIZONTAL);
+		description = new Text(parent, SWT.NONE);
+		description.setSize(30, 400);
+		description.setLayoutData(gridData);
+	}
+
+	// Standard SWT Stuff
+	private void createLable(String text) {
+		Label label = new Label(parent, SWT.NONE);
+		label.setText(text);
+		GridData gridData = new GridData(GridData.HORIZONTAL_ALIGN_FILL);
+		gridData.horizontalIndent = 20;
+		label.setLayoutData(gridData);
+	}
+
+	@Inject
+	public void setTodo(
+			@Optional @Named(IServiceConstants.ACTIVE_SELECTION) Todo todo) {
+		if (todo != null) {
+			this.todo = todo;
+			summary.setText(todo.getSummary());
+			description.setText(todo.getDescription());
+		}
+	}
+	
+	@PostConstruct 
+	public void sendEvent(){
+		System.out.println("Starting to send events");
+		if (eventBroker != null) {
+			Todo todo = new Todo("Describe how cool Event Brooker is.");
+			todo.setDescription("Event Broker needs a proper description in my tutorial");
+			Map<String, Object> map = new HashMap<String, Object>();
+			map.put("TEST1", "This is the message of the test1");
+			map.put("NEWTODO", todo);
+			// Do now block via post (asynchronously)
+			eventBroker.post("NEWDATA", map);
+		}
+	}
+
+}

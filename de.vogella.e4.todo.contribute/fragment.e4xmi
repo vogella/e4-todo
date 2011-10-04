@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:commands="http://www.eclipse.org/ui/2010/UIModel/application/commands" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_2shuwOUqEd-Zpd4LV6VwxQ">
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_S8MNAOUsEd-Zpd4LV6VwxQ" featurename="commands" parentElementId="de.vogella.e4.todo.application">
+    <elements xsi:type="commands:Command" xmi:id="_EFb-sOUtEd-Zpd4LV6VwxQ" elementId="de.vogella.e4.todo.contribute.hello" commandName="Say Hello "/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_DTCb8OUuEd-Zpd4LV6VwxQ" featurename="handlers" parentElementId="de.vogella.e4.todo.application">
+    <elements xsi:type="commands:Handler" xmi:id="_H3p2oOUuEd-Zpd4LV6VwxQ" elementId="" contributionURI="platform:/plugin/de.vogella.e4.todo.contribute/de.vogella.e4.todo.contribute.handler.HelloHander" command="_EFb-sOUtEd-Zpd4LV6VwxQ"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_ACQ80OUwEd-Zpd4LV6VwxQ" featurename="children" parentElementId="de.vogella.e4.todo.filemenu">
+    <elements xsi:type="menu:HandledMenuItem" xmi:id="_q3zUwOUwEd-Zpd4LV6VwxQ" elementId="de.vogella.e4.todo.contribute.hellomenuitem" label="Contributed Hello" command="_EFb-sOUtEd-Zpd4LV6VwxQ"/>
+  </fragments>
+</fragment:ModelFragments>

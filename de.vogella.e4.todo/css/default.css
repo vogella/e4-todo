@@ -1,0 +1,47 @@
+Label {
+	font: Verdana 8px;
+	color: black;
+}
+
+Composite Label {
+	color: black;
+}
+
+
+Text {
+	font: Verdana 8px;
+}
+
+Composite Text {
+	background-color: lightgrey;
+	color: black;
+}
+
+SashForm {
+	background-color: #e3efff #c1d5ef 60%;
+}
+
+CTabItem:selected {
+	background-color: #e3efff #c1d5ef 60%;
+	font-weight: normal;
+	font: Verdana 8px;
+}
+
+Tree {
+	background-color: #e3efff #c1d5ef 60%;
+	color: black;
+	font: Verdana 8px;
+}
+
+
+.MTrimBar {
+	background-color: #e3efff #c1d5ef;
+	color: white;
+	font: Verdana 8px;
+}
+
+Shell {
+    background-color: #e3efff #c1d5ef 60%;
+}
+
+	

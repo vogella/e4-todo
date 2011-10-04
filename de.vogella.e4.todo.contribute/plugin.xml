@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+   		 id="modelContribution"
+         point="org.eclipse.e4.workbench.model">
+      <fragment
+            uri="fragment.e4xmi">
+      </fragment>
+      <processor
+            beforefragment="false"
+            class="de.vogella.e4.todo.contribute.MenuProcessor">
+         <element
+               id="de.vogella.e4.todo.filemenu">
+         </element>
+      </processor>
+  
+   </extension>
+
+</plugin>
